@@ -1,9 +1,61 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="siugApp" class="no-js">
 <head>
-	<title></title>
+	<meta charset="UTF-8"/>
+	<meta name="theme-color" content="#024A74" />
+	<title>SIUG - Universidad de Guanajuato</title>
+	
+	<!--Import Font Awsome-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import angularmaterial.css-->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 </head>
 <body>
+	<div ng-controller="AppCtrl">
 
+	<!-- Inicio Nav Bar -->
+		<md-toolbar>
+    		<div class="md-toolbar-tools md-whiteframe-5dp">
+      			<md-button ng-click="toggleSidenav()" class="md-icon-button">
+        			<md-icon aria-label="Menu" class="material-icons">menu</md-icon>
+      			</md-button>
+      			<h3>SIUG | UGTO</h3>
+    		</div>
+  		</md-toolbar>
+  		<md-content flex="flex">
+    		<md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
+      			<md-list>
+        			<md-list-item href="#/{{item.url}}" ng-repeat="item in list" md-ink-ripple="#3F51B5" class="pointer">
+          				<md-icon aria-label="{{item.label}}" class="material-icons">{{item.icon}}</md-icon>
+          				<p>{{item.name}}</p>
+        			</md-list-item>
+      			</md-list>
+    		</md-sidenav>
+
+		<div ng-view style="height: 100vh">
+	  
+	    </div>
+	
+	</div>
+	<!-- Inicio Scripts -->
+	
+	<!-- Angular JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+    
+    <!-- Angular Material -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	
+	<!-- Controllers -->
+    <script src="app.js"></script>
+    <script src="app/home/home.js"></script>
 </body>
 </html>
