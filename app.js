@@ -2,7 +2,8 @@ angular.module('siugApp', [
         'ngRoute',
         'ngAnimate',
         'ngMaterial',
-            'siugApp.home'
+            'siugApp.home',
+            'siugApp.register'
 
     ]).
     config(function($routeProvider, $mdThemingProvider){

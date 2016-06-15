@@ -4,3 +4,12 @@ ug-blue{
 .container{
 	height: 100vh !important;
 }
+.login-input{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+
+}
+.title{
+	text-align: center;
+}
