@@ -1,8 +1,13 @@
-ug-blue{
+.ugto-blue{
 	background-color: #024A74 !important;
 }
 .container{
 	height: 100vh !important;
+}
+.divider{
+	border-color: #f44336;
+	background-color: #f44336;
+	height: 4px;
 }
 .login-input{
 	width: 80%;
@@ -12,4 +17,11 @@ ug-blue{
 }
 .title{
 	text-align: center;
+}
+.pdf-button{
+	width: 8.3%;
+	margin: 1px;
+}
+.pdf-input{
+	width: 18%;
 }

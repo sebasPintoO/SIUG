@@ -2,20 +2,26 @@ angular.module('siugApp', [
         'ngRoute',
         'ngAnimate',
         'ngMaterial',
+        'pdf',
             'siugApp.home',
-            'siugApp.register'
+            'siugApp.register',
+            'siugApp.reader'
 
     ]).
     config(function($routeProvider, $mdThemingProvider){
         //Aqui van las rutas
         $routeProvider
-        .when('/about',{
-            templateUrl: 'app/about/about.html',
-            controller: 'AboutCtrl'
+        .when('/home',{
+            templateUrl: 'app/home/home.html',
+            controller: 'HomeCtrl'
         })
-        .when('/contact',{
-            templateUrl: 'app/contact/contact.html',
-            controller: 'ContactCtrl'
+        .when('/register',{
+            templateUrl: 'app/register/register.html',
+            controller: 'RegCtrl'
+        })
+        .when('/reader',{
+            templateUrl: 'app/reader/reader.html',
+            controller: 'RdrCtrl'
         })
         .otherwise({
             redirectTo: '/home'
@@ -44,10 +50,10 @@ angular.module('siugApp', [
                     url:  'about'
                 },
                 {
-                    label: 'Contact',
-                    icon: 'phone_android',
-                    name: 'Contacto',
-                    url: 'contact'
+                    label: 'Reader',
+                    icon: 'local_library',
+                    name: 'Reader',
+                    url: 'reader'
                 }
             ];
 

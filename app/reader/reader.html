@@ -1,0 +1,32 @@
+<div class="wrapper" ng-controller="RdrCtrl">
+  <h1 class="title">{{pdfName}}</h1>
+  <nav ng-class="getNavStyle(scroll)" class="">
+  <md-button ng-click="goPrevious()" class="md-raised pdf-button"><md-icon aria-label="Menu" class="material-icons">keyboard_arrow_left</md-icon></md-button>
+  <md-button ng-click="goNext()" class="md-raised pdf-button"><md-icon aria-label="Menu" class="material-icons">keyboard_arrow_right</md-icon></md-button>
+
+  <md-button ng-click="zoomIn()" class="md-raised md-primary pdf-button"><md-icon aria-label="Menu" class="material-icons">add</md-icon></md-button>
+  <md-button ng-click="fit()" class="md-raised pdf-button">100%</span></md-button>
+  <md-button ng-click="zoomOut()" class="md-raised md-primary pdf-button"><md-icon aria-label="Menu" class="material-icons">remove</md-icon></md-button>
+
+  <md-button ng-click="rotate()" class="md-raised pdf-button">90</span></md-button>
+
+  
+  <md-input-container class="pdf-input">
+  	<label>Página: </label>
+  	<input type="text" min=1 ng-model="pageNum">
+  	<span> de  {{pageCount}}</span>
+  </md-input-container>
+  
+
+  &nbsp;&nbsp;
+  <md-input-container class="pdf-input">
+	  <label>Document URL: </label>
+	  <input type="text" ng-model="pdfUrl">
+  </md-input-container>
+</nav>
+
+<hr class="divider">
+
+{{loading}}
+<canvas id="pdf" class="rotate0"></canvas>
+</div>
