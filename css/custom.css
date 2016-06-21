@@ -25,3 +25,18 @@
 .pdf-input{
 	width: 18%;
 }
+.quote{
+	height: 100%;
+	width: 100%;
+	border: 2px solid #024A74;
+	background-color: #024A74;
+	border-radius: 12px;
+	color: white;
+	padding-left: 10%;
+	font-size: 1em;
+}
+.pdf-content{
+	padding-right: 25%;
+	text-align: justify;
+	padding-left: 5%;
+}
