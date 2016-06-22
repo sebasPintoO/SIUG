@@ -41,12 +41,14 @@ $routeProvider.when('/reader', {
 
   /************ SELECTOR DE PALABRAS ************/
 
+  //Obtiene la posicion del Mouse con un desfase de 20
   var mousePos;
   $(document).mousemove(function (e) {
   	mousePos = {left: e.pageX + 20, top: e.pageY + 20};
     //console.log(mousePos);
    });
 
+  //Se obtiene la palabra seleccionada
   var selectedText = '';
 	function getSelectedText(){ 
     if(window.getSelection){ 
@@ -69,7 +71,7 @@ function checkSelectionChanged() {
         if(selectedText != '') {
             $('#quote #text').text(selectedText);
             $('#quote').offset(mousePos);
-            $('#quote').show();
+            $('#quote').slideDown("slow");
             $.getJSON("dictionary.json", function( data ) {
     			// do whatever you want
  				var definitionObj = data;
@@ -84,13 +86,13 @@ function checkSelectionChanged() {
  				//console.log(definitionJs);
 			});
         } else {
-            $('#quote').hide();
+            $('#quote').slideUp("slow");
         }
     }
 }
-console.log(wordJs);
-console.log(definitionJs);
-setInterval(checkSelectionChanged, 1000);
+	console.log(wordJs);
+	console.log(definitionJs);
+	setInterval(checkSelectionChanged, 1000);
  
 
 

@@ -26,14 +26,16 @@
 	width: 18%;
 }
 .quote{
-	height: 100%;
-	width: 100%;
+	height: 50%;
+	width: 20%;
 	border: 2px solid #024A74;
 	background-color: #024A74;
 	border-radius: 12px;
 	color: white;
-	padding-left: 10%;
-	font-size: 1em;
+	padding-left: 2%;
+	padding-right: 2%;
+	font-size: 0.8em;
+	text-align: justify;
 }
 .pdf-content{
 	padding-right: 25%;
