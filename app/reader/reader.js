@@ -63,7 +63,7 @@ $routeProvider.when('/reader', {
         return document.selection.createRange().text; 
     } 
 } 
-
+// Checa si la selección ha cambiado o esta vacía
 function checkSelectionChanged() {
     var current = getSelectedText();
     if(current != selectedText) {
@@ -72,8 +72,8 @@ function checkSelectionChanged() {
             $('#quote #text').text(selectedText);
             $('#quote').offset(mousePos);
             $('#quote').slideDown("slow");
-            $.getJSON("dictionary.json", function( data ) {
-    			// do whatever you want
+            $.getJSON("dictionary.json", function( data ) { // Función para obtener palabras del diccionario
+    			// Funcion cuando se da click en el boton para definir
     			$('#define').click(function(){
     				var definitionObj = data;
  					wordJs = selectedText.toUpperCase();
@@ -84,15 +84,16 @@ function checkSelectionChanged() {
        				});
 
     			});
-    			/*
- 				var definitionObj = data;
- 				wordJs = selectedText.toUpperCase();
- 				definitionJs = definitionObj[selectedText.toUpperCase()];
- 				$scope.$apply(function () {
-            		$scope.word = wordJs + ':';
-            		$scope.definition = definitionJs;
-       			});
- 				*/
+    		//Funcion cuando se da click en el boton para resaltar
+    		$('#highlight').click(function(){
+    			var range = window.getSelection().getRangeAt(0);
+    			var highSpan = document.createElement('span');
+
+    			highSpan.className = 'highlighted-text';
+    			highSpan.appendChild(range.extractContents());
+    			range.insertNode(highSpan);
+
+    		});
  				//console.log(wordJs);
  				//console.log(definitionJs);
 			});
