@@ -12,7 +12,7 @@ $routeProvider.when('/reader', {
 
 .controller('RdrCtrl', ['$scope','$filter','$http', function($scope,$filter, $http) {
 
-  $scope.pdfName = 'PDF de ejemplo';
+  $scope.pdfName = 'Bitwise Operation (Example Text)';
   $scope.pdfUrl = 'docs/test-pdf.pdf';
   $scope.scroll = 0;
   $scope.loading = 'loading';
@@ -74,19 +74,34 @@ function checkSelectionChanged() {
             $('#quote').slideDown("slow");
             $.getJSON("dictionary.json", function( data ) {
     			// do whatever you want
+    			$('#define').click(function(){
+    				var definitionObj = data;
+ 					wordJs = selectedText.toUpperCase();
+ 					definitionJs = definitionObj[selectedText.toUpperCase()];
+ 					$scope.$apply(function () {
+            			$scope.word = wordJs + ':';
+            			$scope.definition = definitionJs;
+       				});
+
+    			});
+    			/*
  				var definitionObj = data;
  				wordJs = selectedText.toUpperCase();
  				definitionJs = definitionObj[selectedText.toUpperCase()];
  				$scope.$apply(function () {
-            		$scope.word = wordJs;
+            		$scope.word = wordJs + ':';
             		$scope.definition = definitionJs;
        			});
- 				
+ 				*/
  				//console.log(wordJs);
  				//console.log(definitionJs);
 			});
         } else {
             $('#quote').slideUp("slow");
+            $scope.$apply(function () {
+            			$scope.word ='';
+            			$scope.definition = '';
+       				});
         }
     }
 }

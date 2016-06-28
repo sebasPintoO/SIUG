@@ -27,7 +27,7 @@
 }
 .quote{
 	height: 50%;
-	width: 20%;
+	width: 15%;
 	border: 2px solid #024A74;
 	background-color: #024A74;
 	border-radius: 12px;
@@ -41,4 +41,11 @@
 	padding-right: 25%;
 	text-align: justify;
 	padding-left: 5%;
+}
+.white-text{
+	color: white;
+}
+.toolbar-button:hover{
+	background-color: #023E61 !important;
+
 }
