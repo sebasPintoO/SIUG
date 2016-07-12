@@ -10,7 +10,7 @@ $routeProvider.when('/reader', {
     });
 }])
 
-.controller('RdrCtrl', ['$scope','$filter','$http', function($scope,$filter, $http) {
+.controller('RdrCtrl', ['$scope','$filter','$http','$firebaseArray','$firebaseObject', function($scope,$filter, $http, $firebaseArray, $firebaseObject) {
 
   $scope.pdfName = 'Bitwise Operation (Example Text)';
   $scope.pdfUrl = 'docs/test-pdf.pdf';
@@ -18,6 +18,12 @@ $routeProvider.when('/reader', {
   $scope.loading = 'loading';
   $scope.word = '';
   $scope.definition = '';
+
+  /** MANEJO DE BASE DE DATOS */ 
+
+  //var dbData = firebase.database().ref();
+
+  //$scope.ejemplo = $firebaseArray(dbData);
 
   var	definitionJs;
   var	wordJs;
@@ -86,12 +92,18 @@ function checkSelectionChanged() {
     			});
     		//Funcion cuando se da click en el boton para resaltar
     		$('#highlight').click(function(){
+    			//var oldSpan = document.getElementById('highlighted-id');
+    			//console.log(oldSpan);
     			var range = window.getSelection().getRangeAt(0);
     			var highSpan = document.createElement('span');
 
     			highSpan.className = 'highlighted-text';
+    			highSpan.setAttribute("id","highlighted-id");
     			highSpan.appendChild(range.extractContents());
     			range.insertNode(highSpan);
+				//console.log(range.toString());
+    			//console.log(selectedText);
+
 
     		});
  				//console.log(wordJs);

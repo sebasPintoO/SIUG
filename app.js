@@ -2,6 +2,7 @@ angular.module('siugApp', [
         'ngRoute',
         'ngAnimate',
         'ngMaterial',
+        'firebase',
         'pdf',
             'siugApp.home',
             'siugApp.register',

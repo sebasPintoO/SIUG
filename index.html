@@ -53,7 +53,17 @@
 	<!-- JQUERY -->
 	<script src="js/custom.js"></script>
 	
-
+	<script>
+  		// Initialize Firebase
+  		var config = {
+    		apiKey: "AIzaSyAbdbUbxd8e6H7Fb7elLPBYC7PH6J61bog",
+    		authDomain: "siug-ugto-621fc.firebaseapp.com",
+    		databaseURL: "https://siug-ugto-621fc.firebaseio.com",
+    		storageBucket: "siug-ugto-621fc.appspot.com",
+  		};
+  		firebase.initializeApp(config);
+	</script>
+	
 	<!-- Angular JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
@@ -63,6 +73,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+    <!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 	
 	<!-- Controllers -->
     <script src="app.js"></script>
