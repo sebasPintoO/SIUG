@@ -1,6 +1,6 @@
 'use strict';
  
-angular.module('siugApp.reader', ['ngRoute'])
+angular.module('siugApp.reader', ['ngRoute', 'firebase'])
  
 // Declared route 
 .config(['$routeProvider', function($routeProvider) {
@@ -21,9 +21,9 @@ $routeProvider.when('/reader', {
 
   /** MANEJO DE BASE DE DATOS */ 
 
-  //var dbData = firebase.database().ref();
+  var dbData = new Firebase('https://siug-ugto-08.firebaseio.com');
 
-  //$scope.ejemplo = $firebaseArray(dbData);
+  $scope.ejemplo = $firebaseObject(dbData);
 
   var	definitionJs;
   var	wordJs;

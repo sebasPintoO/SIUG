@@ -6,7 +6,8 @@ angular.module('siugApp', [
         'pdf',
             'siugApp.home',
             'siugApp.register',
-            'siugApp.reader'
+            'siugApp.reader',
+            'siugApp.report'
 
     ]).
     config(function($routeProvider, $mdThemingProvider){
@@ -24,6 +25,10 @@ angular.module('siugApp', [
             templateUrl: 'app/reader/reader.html',
             controller: 'RdrCtrl'
         })
+        .when('/report',{
+            templateUrl: 'app/report/report.html',
+            controller: 'RepCtrl'
+        })
         .otherwise({
             redirectTo: '/home'
         });
@@ -31,7 +36,9 @@ angular.module('siugApp', [
         $mdThemingProvider.theme('default')
             .primaryPalette('red')
             .accentPalette('blue');
+
     })
+        
 
     .controller('AppCtrl', ['$scope','$mdSidenav', function($scope, $mdSidenav) {
         $scope.toggleSidenav = function () {
@@ -55,6 +62,12 @@ angular.module('siugApp', [
                     icon: 'local_library',
                     name: 'Reader',
                     url: 'reader'
+                },
+                {
+                    label: 'Report',
+                    icon: 'pie_chart',
+                    name: 'Report',
+                    url: 'report'
                 }
             ];
 
