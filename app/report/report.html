@@ -2,4 +2,9 @@
 	<h1 class="title">Reporte de : {{student.pNombre}} {{student.sNombre}} {{student.pApellido}} {{student.sApellido}}</h1>
 
 	<hr class="divider">
+
+	<h3>Palabras definidas durante la lectura:</h3>
+	<ul>
+		<li ng-repeat="word in studentWords">{{word.$id}}</li>
+	</ul>
 </div>

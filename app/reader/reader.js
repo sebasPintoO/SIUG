@@ -19,15 +19,6 @@ $routeProvider.when('/reader', {
   $scope.word = '';
   $scope.definition = '';
 
-  /** MANEJO DE BASE DE DATOS */ 
-
-  var dbData = new Firebase('https://siug-ugto-08.firebaseio.com');
-
-  $scope.ejemplo = $firebaseObject(dbData);
-
-  var	definitionJs;
-  var	wordJs;
-
   $scope.getNavStyle = function(scroll) {
     if(scroll > 100) return 'pdf-controls fixed';
     else return 'pdf-controls';
@@ -82,12 +73,19 @@ function checkSelectionChanged() {
     			// Funcion cuando se da click en el boton para definir
     			$('#define').click(function(){
     				var definitionObj = data;
- 					wordJs = selectedText.toUpperCase();
- 					definitionJs = definitionObj[selectedText.toUpperCase()];
+ 					var wordJs = selectedText.toUpperCase();
+ 					var definitionJs = definitionObj[selectedText.toUpperCase()];
  					$scope.$apply(function () {
             			$scope.word = wordJs + ':';
             			$scope.definition = definitionJs;
-       				});
+
+            			var studentWords = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/palabras/' + $scope.word);
+            			$scope.studentWords = $firebaseArray(studentWords);
+            			$scope.studentWords.$add({
+							value: $scope.wordJs,
+							counter: 2
+	});
+       					});
 
     			});
     		//Funcion cuando se da click en el boton para resaltar
@@ -118,8 +116,8 @@ function checkSelectionChanged() {
         }
     }
 }
-	console.log(wordJs);
-	console.log(definitionJs);
+	//console.log(wordJs);
+	//console.log(definitionJs);
 	setInterval(checkSelectionChanged, 1000);
  
 
