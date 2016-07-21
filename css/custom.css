@@ -52,17 +52,22 @@
 .highlighted-text{
 	background-color: #ffeb3b;
 }
+.word-list-container{
+	width:100%;
+	border: 2px solid black;
+}
 .word-list {
   float: left;
   width: 35%;
   box-sizing: border-box;
-  padding: 0 8px; 
-  text-align: center
+  padding: 0px; 
+  text-align: center;
 }
 .word-list .md-item-text {
   padding: 8px;
-  background: #f0f0f0;
-  border-radius: 3px; 
+  background: #023E61;
+  border-radius: 4px; 
+  color: white;
 }
 .word-list .md-item-text h3,
 .word-list .md-item-text p {

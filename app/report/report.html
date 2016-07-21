@@ -5,15 +5,14 @@
 		<hr class="divider">
 
 		<h3 class="report-title">Palabras consultadas durante la lectura:</h3>
-		<md-list>
-	      <md-list-item class="md-2-line word-list" ng-repeat="word in studentWords" layout="row" layout-xs="column" layout-sm="column"
-	          layout-wrap>
-	        <div class="md-item-text md-whiteframe-z1" flex>
-	          <h3>{{word.$id}}</h3>
-	          <p>N° de veces:  {{counters[$index]}}</p>
-	        </div>
-	      </md-list-item>
-	    </md-list>
+			<md-list >
+		      <md-list-item class="md-2-line word-list" ng-repeat="word in studentWords" layout="row" layout-xs="column" layout-sm="column" layout-fill layout-align="center center">
+		        <div class="md-item-text md-whiteframe-z1" flex>
+		          <h3>{{word.$id}}</h3>
+		          <p>N° de veces:  {{counters[$index]}}</p>
+		        </div>
+		      </md-list-item>
+		    </md-list>
 	</md-content>
 	<hr class="divider">
 </div>
