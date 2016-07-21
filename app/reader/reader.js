@@ -18,6 +18,7 @@ $routeProvider.when('/reader', {
   $scope.loading = 'loading';
   $scope.word = '';
   $scope.definition = '';
+  var globalSelectedText = '';
 
   $scope.getNavStyle = function(scroll) {
     if(scroll > 100) return 'pdf-controls fixed';
@@ -94,6 +95,8 @@ function checkSelectionChanged() {
     			//console.log(oldSpan);
     			var range = window.getSelection().getRangeAt(0);
     			var highSpan = document.createElement('span');
+    			globalSelectedText = range.toString();
+    			//console.log(globalSelectedTect);
 
     			highSpan.className = 'highlighted-text';
     			highSpan.setAttribute("id","highlighted-id");
@@ -101,9 +104,35 @@ function checkSelectionChanged() {
     			range.insertNode(highSpan);
 				//console.log(range.toString());
     			//console.log(selectedText);
-
-
     		});
+    		//Funciones para guardar los highlihgts segun selección del usuario
+		    $('#hlOpt1').click(function(){
+		    	var hlDatabase1 = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/highlihgts/hlOpt1')
+		    	var hlData1 = $firebaseArray(hlDatabase1);
+		    	console.log(globalSelectedText);
+		    	hlData1.$add({
+		    		content: globalSelectedText
+		    	});
+		    	
+		    });
+
+		    $('#hlOpt2').click(function(){
+		    	var hlDatabase2 = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/highlihgts/hlOpt2')
+		    	var hlData2 = $firebaseArray(hlDatabase2);
+		    	console.log(globalSelectedText);
+		    	hlData2.$add({
+		    		content: globalSelectedText
+		    	});
+		    });
+
+		    $('#hlOpt3').click(function(){
+		    	var hlDatabase3 = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/highlihgts/hlOpt3')
+		    	var hlData3 = $firebaseArray(hlDatabase3);
+		    	console.log(globalSelectedText);
+		    	hlData3.$add({
+		    		content: globalSelectedText
+		    	});
+		    });
  				//console.log(wordJs);
  				//console.log(definitionJs);
 			});
@@ -119,8 +148,13 @@ function checkSelectionChanged() {
 	//console.log(wordJs);
 	//console.log(definitionJs);
 	setInterval(checkSelectionChanged, 1000);
- 
 
+	var originatorEv;
+    this.menuHref = "http://www.google.com/design/spec/components/menus.html#menus-specs";
+    this.openMenu = function($mdOpenMenu, ev) {
+      originatorEv = ev;
+      $mdOpenMenu(ev);
+    };
 
 
  

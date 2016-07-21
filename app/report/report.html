@@ -15,4 +15,50 @@
 		    </md-list>
 	</md-content>
 	<hr class="divider">
+	<md-content>
+		<h3 class="report-title">Selecciones Resaltadas:</h3>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="Opción 1">
+				<md-content class="md-padding">
+					<md-list flex>
+						<md-subheader class="md-no-sticky report-title"><h4>El estudiante no entendió nada acerda de lo que resaltó</h4></md-subheader>
+						<md-list-item class="md-3-line" ng-repeat="data1 in hlOpt1" ng-click="null">
+          					<md-icon aria-label="Menu" class="material-icons">play_arrow</md-icon>
+          					<div class="md-list-item-text" layout="column">
+            					<p>{{ data1.content }}</p>
+          					</div>
+        				</md-list-item>
+        			</md-list>
+				</md-content>
+			</md-tab>
+
+			<md-tab label="Opción 2">
+				<md-content class="md-padding">
+					<md-list flex>
+						<md-subheader class="md-no-sticky report-title"><h4>El estudiante entendió las palabras pero no el contexto</h4></md-subheader>
+						<md-list-item class="md-3-line" ng-repeat="data2 in hlOpt2" ng-click="null">
+          					<md-icon aria-label="Menu" class="material-icons">play_arrow</md-icon>
+          					<div class="md-list-item-text" layout="column">
+            					<p>{{ data2.content }}</p>
+          					</div>
+        				</md-list-item>
+        			</md-list>
+				</md-content>
+			</md-tab>
+
+			<md-tab label="Opción 3">
+				<md-content class="md-padding">
+					<md-list flex>
+						<md-subheader class="md-no-sticky report-title"><h4>El estudiante subrayó porque piensa que es importante</h4></md-subheader>
+						<md-list-item class="md-3-line" ng-repeat="data3 in hlOpt3" ng-click="null">
+          					<md-icon aria-label="Menu" class="material-icons">play_arrow</md-icon>
+          					<div class="md-list-item-text" layout="column">
+            					<p>{{ data3.content }}</p>
+          					</div>
+        				</md-list-item>
+        			</md-list>
+				</md-content>
+			</md-tab>
+		</md-tabs>
+	</md-content>
 </div>

@@ -38,12 +38,47 @@
           		Search Definition	
        		</md-tooltip>
       	</md-button>
-      	<md-button class="md-icon-button toolbar-button" id="highlight" aria-label="More">
-        	<md-icon aria-label="Menu" class="material-icons white-text">border_color</md-icon>
-        	<md-tooltip md-direction="top">
+      	<md-menu>
+          <md-button aria-label="Open demo menu" class="md-icon-button toolbar-button" id=highlight ng-click="$mdOpenMenu($event)">
+            <md-icon aria-label="Menu" class="material-icons white-text">border_color</md-icon>
+            <md-tooltip md-direction="top">
           		Highlight	
        		</md-tooltip>
-      	</md-button>
+          </md-button>
+          <md-menu-content width="6">
+          	<h4>Why did you highlight this text?</h4>
+
+          	<md-menu-divider></md-menu-divider>
+
+            <md-menu-item>
+              <md-button id="hlOpt1">
+                <md-icon md-menu-align-target>sentiment_dissatisfied</md-icon>
+                	<span>I didn't understand anything</span>
+              </md-button>
+            </md-menu-item>
+
+            <md-menu-divider></md-menu-divider>
+
+            <md-menu-item>
+              <md-button id="hlOpt2">
+                <md-icon md-menu-align-target>sentiment_neutral</md-icon>
+                <span>I understand the words but not the context</span>
+              </md-button>
+            </md-menu-item>
+
+            <md-menu-divider></md-menu-divider>
+
+            <md-menu-item>
+              <md-button id="hlOpt3">
+                <md-icon md-menu-align-target>sentiment_satisfied</md-icon>
+                <span>I think is important</span>
+              </md-button>
+            </md-menu-item>
+
+            <md-menu-divider></md-menu-divider>
+
+          </md-menu-content>
+        </md-menu>
       	<md-button class="md-icon-button toolbar-button" aria-label="More">
         	<md-icon aria-label="Menu" class="material-icons white-text">insert_comment</md-icon>
         	<md-tooltip md-direction="top">

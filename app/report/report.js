@@ -30,5 +30,14 @@ $routeProvider.when('/report', {
   	$scope.counters = definitionCounter;
   	console.log($scope.counters);
 
+  	var highlightsDataOpt1 = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/highlihgts/hlOpt1');
+  	var highlightsDataOpt2 = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/highlihgts/hlOpt2');
+  	var highlightsDataOpt3 = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/highlihgts/hlOpt3');
+
+  	$scope.hlOpt1 = $firebaseArray(highlightsDataOpt1);
+  	$scope.hlOpt2 = $firebaseArray(highlightsDataOpt2);
+  	$scope.hlOpt3 = $firebaseArray(highlightsDataOpt3);
+  	console.log($scope.hlOpt2);
+
 
 }]);
