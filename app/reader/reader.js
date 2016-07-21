@@ -82,7 +82,7 @@ function checkSelectionChanged() {
             			var studentWords = new Firebase('https://siug-ugto-08.firebaseio.com/estudiante/lecturas/palabras/' + $scope.word);
             			$scope.studentWords = $firebaseArray(studentWords);
             			$scope.studentWords.$add({
-							value: $scope.wordJs,
+							value: wordJs.toLowerCase(),
 							counter: 2
 	});
        					});

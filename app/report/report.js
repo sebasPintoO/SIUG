@@ -17,8 +17,18 @@ $routeProvider.when('/report', {
 
 	$scope.student = $firebaseObject(studentData);
 	$scope.studentWords = $firebaseArray(studentWords);
-	console.log($scope.studentWords.$length);
+	var definitionCounter= [];
 
+	studentWords.once("value", function(snapshot) {
+ 		snapshot.forEach(function(childSnapshot){
+ 			var counter = childSnapshot.numChildren();
+
+ 			definitionCounter.push(counter/2);
+ 		});
+  	});
+  	//console.log(definitionCounter);
+  	$scope.counters = definitionCounter;
+  	console.log($scope.counters);
 
 
 }]);

@@ -52,3 +52,23 @@
 .highlighted-text{
 	background-color: #ffeb3b;
 }
+.word-list {
+  float: left;
+  width: 35%;
+  box-sizing: border-box;
+  padding: 0 8px; 
+  text-align: center
+}
+.word-list .md-item-text {
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 3px; 
+}
+.word-list .md-item-text h3,
+.word-list .md-item-text p {
+  padding: 0;
+  margin: 0; 
+}
+.report-title{
+	padding-left: 2%;
+}

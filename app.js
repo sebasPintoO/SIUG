@@ -4,6 +4,7 @@ angular.module('siugApp', [
         'ngMaterial',
         'firebase',
         'pdf',
+        'chart.js', 
             'siugApp.home',
             'siugApp.register',
             'siugApp.reader',
